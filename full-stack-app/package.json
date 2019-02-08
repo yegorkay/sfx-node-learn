@@ -1,0 +1,29 @@
+{
+  "name": "sfx-node",
+  "version": "1.0.0",
+  "description": "sfx node demo",
+  "license": "MIT",
+  "scripts": {
+    "client": "cd client && npm run start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "dev:server": "cd client && npm run build && cd .. && npm run start",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "express": "4.16.4",
+    "nodemon": "1.18.9",
+    "cheerio": "1.0.0-rc.2",
+    "puppeteer": "1.11.0"
+  },
+  "devDependencies": {
+    "concurrently": "4.1.0"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "create-react-app"
+  ]
+}
